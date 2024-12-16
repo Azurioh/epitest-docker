@@ -147,4 +147,11 @@ RUN chsh -s /usr/bin/zsh root
 SHELL ["/usr/bin/zsh", "-c"]
 ENTRYPOINT ["/usr/bin/zsh"]
 
+# Copy SSH keys
+COPY config/.ssh /root/.ssh
+
+# Copy OhMyZSH configuration
+COPY config/.zshrc /root/.zshrc
+COPY config/.oh-my-zsh /root/.oh-my-zsh
+
 WORKDIR /usr/app
