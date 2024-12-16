@@ -1,4 +1,4 @@
-FROM ubuntu:mantic
+FROM ubuntu:jammy
 LABEL maintainer="Alexandre Vanhecke <alexandre1.vanhecke@epitech.eu>"
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
@@ -105,7 +105,6 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
         rustc \
         strace \
         sudo \
-        systemd-dev \
         tar \
         tcpdump \
         tcsh \
