@@ -4,13 +4,13 @@
 
 This is a fork of the original repository, with the following changes:
 
-- Set OhMyZsh as default shell
-- Copy the OhMyZsh configuration file and plugins
+- Set **Oh My Zsh** as default shell
+- Copy the **Oh My Zsh** configuration file and plugins
 - Copy the ssh keys from the host to the container
 
 To build the image, run the `install.sh` script.
 
-To run the image, you can use the `docker-epitech` script (add it in your PATH), it will open a container in the current directory.
+To run the image, you can use the `docker-epitech` script (add it in your PATH, it's easier to use), it will open a container in the current directory.
 
 ---
 
