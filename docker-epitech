@@ -1,0 +1,1 @@
+CONTAINER_ID=$(docker run -it -v $(pwd):/mac --env=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin --workdir=/mac' --runtime=runc -d myepitechcontent/epitest-docker:devel);docker exec -it $CONTAINER_ID /bin/zsh
