@@ -137,4 +137,14 @@ RUN cd /tmp \
 
 ENV LANG=en_US.utf8 LANGUAGE=en_US:en LC_ALL=en_US.utf8 PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
 
+# Install OhMyZSH
+RUN cd /tmp \
+    && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" \
+    && rm -rf /tmp/*
+
+# Set ZSH as default shell
+RUN chsh -s /usr/bin/zsh root
+SHELL ["/usr/bin/zsh", "-c"]
+ENTRYPOINT ["/usr/bin/zsh"]
+
 WORKDIR /usr/app
