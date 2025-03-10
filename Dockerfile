@@ -1,6 +1,10 @@
 FROM ubuntu:jammy
 LABEL maintainer="Alexandre Vanhecke <alexandre1.vanhecke@epitech.eu>"
 
+RUN echo "deb http://old-releases.ubuntu.com/ubuntu/ mantic main restricted universe multiverse" > /etc/apt/sources.list && \
+    echo "deb http://old-releases.ubuntu.com/ubuntu/ mantic-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+    echo "deb http://old-releases.ubuntu.com/ubuntu/ mantic-security main restricted universe multiverse" >> /etc/apt/sources.list
+
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections \
         && apt-get update -y \
         && apt-get install -y --no-install-recommends software-properties-common apt-utils \
@@ -118,6 +122,7 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
         zip \
         zsh \
         curl \
+        bsdextrautils \
         && apt-get clean -y \
         && rm -rf /var/lib/apt/lists/* \
         && rm -rf /usr/share/doc/*
